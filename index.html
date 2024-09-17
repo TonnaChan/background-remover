@@ -4,12 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transformers.js - WebGPU Background Removal</title>
-  <script type="module" crossorigin src="assets/index-17_Va4sS.js"></script>
-  <link rel="stylesheet" crossorigin href="assets/index-SojaDS6z.css">
+  <title>Background Removal</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/banana-favicon.png">
+
+  <!-- Link to Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <script type="module" crossorigin src="scripts/index-17_Va4sS.js"></script>
+  <link rel="stylesheet" crossorigin href="scripts/index-SojaDS6z.css">
 </head>
 
-<body>
+<body class="container my-4">
   <h1>Background Removal</h1>
   <h4>Runs locally in your browser</h4>
   <div id="container">
@@ -22,10 +29,23 @@
       Click to upload image
     </label>
   </div>
+  
   <label id="status"></label>
-  <input id="upload" type="file" accept="image/*" />
+  <input id="upload" type="file" accept="image/*" hidden />
   <label id="example"></label>
 
+  <!-- Add a refresh button with Bootstrap styles -->
+  <button id="refresh-button" class="btn btn-danger my-3">Remove the background of another image</button>
+
+  <script>
+    // JavaScript to handle the refresh functionality
+    document.getElementById('refresh-button').addEventListener('click', function() {
+      location.reload(); // Refreshes the page
+    });
+  </script>
+
+  <!-- Bootstrap JS (optional if you use any Bootstrap JS features) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76A8fQsP9j7tW1ERj25iEfvhLycYzqPuPdvY0v2c2H9mVV6MSZ8k5yUqEg4wk" crossorigin="anonymous"></script>
 </body>
 
 </html>
